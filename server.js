@@ -9,12 +9,12 @@ const path = require('path');
 const cors=require("cors");
 
 const app = express();
-app.use(cors())
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 
 // Middleware
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use(express.json());
 
 
