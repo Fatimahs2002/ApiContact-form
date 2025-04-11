@@ -117,7 +117,7 @@ const PORT = process.env.PORT || 3000;
 
 // ✅ Configure CORS properly
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://your-frontend-domain.com", "YOUR_RENDER_FRONTEND_URL"], // Add your frontend URL here
+    origin: ["http://localhost:3000", "https://portolio-1gj0.onrender.com"], // Add your frontend URL here
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
 };
