@@ -117,7 +117,7 @@ const PORT = process.env.PORT || 3000;
 
 // ✅ Configure CORS properly
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://your-frontend-domain.com"],
+    origin: ["http://localhost:3000", "https://your-frontend-domain.com", "YOUR_RENDER_FRONTEND_URL"], // Add your frontend URL here
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
 };
@@ -132,14 +132,14 @@ app.post('/send-email', async (req, res) => {
         return res.status(400).json({ status: 'error', message: 'Missing required fields!' });
     }
 
-    const validationResult = await validate(email);
-    if (!validationResult.valid) {
-        return res.status(400).json({
-            status: 'error',
-            message: 'Email is not valid. Please try again!',
-            reason: validationResult.reason
-        });
-    }
+    // const validationResult = await validate(email);
+    // if (!validationResult.valid) {
+    //     return res.status(400).json({
+    //         status: 'error',
+    //         message: 'Email is not valid. Please try again!',
+    //         reason: validationResult.reason
+    //     });
+    //}
 
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
